@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Email Sent</title>
+    <style>
+      body {
+        background-color: #2c2c2a;
+        color: #f1e0c6;
+        font-family: "Segoe UI", sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        text-align: center;
+      }
+
+      .popup {
+        background-color: #412e30;
+        padding: 2rem 3rem;
+        border-radius: 12px;
+        box-shadow: 0 0 20px #8c4e52;
+        font-size: 1.5rem;
+        animation: fadeIn 0.5s ease-in;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: scale(0.95);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="popup">✅ Email Sent! Redirecting...</div>
+
+    <script>
+      setTimeout(() => {
+        window.location.href = "index.html";
+      }, 2500);
+    </script>
+  </body>
+</html>
