@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // --- Contact Form ---
+  // --- Contact Form --- //
   const form = document.querySelector("form");
   if (form) {
     form.addEventListener("submit", (e) => {
@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // --- Scroll Highlight ---
+  // --- Scroll Highlight --- //
   const navItems = document.querySelectorAll("nav ul li a");
   window.addEventListener("scroll", () => {
     const fromTop = window.scrollY + 110;
@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // --- Hamburger Menu ---
+  // --- Hamburger Menu --- //
   const hamburger = document.getElementById("hamburger");
   const navMenu = document.getElementById("nav-links");
 
@@ -46,3 +46,43 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+
+// --- Nickname Typing Effect --- //
+const nicknames = ["Kevs", "Kebs", "Enerio"];
+const typed = document.getElementById("typed-nickname");
+
+let i = 0; 
+let j = 0; 
+let current = "";
+let isDeleting = false;
+
+function typeEffect() {
+  current = nicknames[i];
+
+  if (!isDeleting) {
+    // typing forward
+    typed.textContent = current.substring(0, j + 1);
+    j++;
+
+    if (j === current.length) {
+      isDeleting = true;
+      setTimeout(typeEffect, 1500); 
+      return;
+    }
+  } else {
+    // deleting backward
+    typed.textContent = current.substring(0, j - 1);
+    j--;
+
+    if (j === 0) {
+      isDeleting = false;
+      i = (i + 1) % nicknames.length; 
+    }
+  }
+
+  const speed = isDeleting ? 80 : 120; 
+  setTimeout(typeEffect, speed);
+}
+
+typeEffect();
