@@ -32,8 +32,11 @@
     <section class="intro" id="intro">
       <div class="intro-text">
         <h1>
-          <span class="greeting">Hello, I'm</span> <span>Kevin Enerio</span>
+          Hello, I'm <span class="accent-text">Kevin Enerio</span><br/>
         </h1>
+        <h2> 
+          But you can call me<span id="typed-nickname"></span>
+        </h2>
         <p>
           A passionate Computer Engineering student with interest in web
           development and software projects.
@@ -75,55 +78,60 @@
     <section id="about-experience" class="info-sections">
       <div class="info-box">
         <h2>About Me</h2>
-        <h3>Education</h3>
-        <p>
-          3rd Year BS in Computer Engineering, Mapua Malayan Colleges Mindanao
-        </p>
-        <br />
-        <h3>Languages</h3>
-        <ul>
-          <li>
-            <h4>Web Development</h4>
-            HTML, CSS, & JavaScript
-          </li>
-          <li>
-            <h4>Mobile Development</h4>
-            Firebase, Jetpack Compose, & Kotlin
-          </li>
-          <li>
-            <h4>Data Structure & Algorithm</h4>
-            C & C++
-          </li>
-          <li>
-            <h4>Object Oriented Programming</h4>
-            C#
-          </li>
-          <li>
-            <h4>Programming Logic and Design</h4>
-            Java & C++
-          </li>
-          <li>
-            <h4>Computer Fundamentals and Programming 1</h4>
-            Python
-          </li>
-        </ul>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="circle"></div>
+            <div class="content">
+              <h3>Education</h3>
+              <p>3rd Year BS in Computer Engineering, Mapua Malayan Colleges Mindanao</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="circle"></div>
+            <div class="content">
+              <h3>Languages</h3>
+              <ul>
+                <li><strong>Web Development:</strong> HTML, CSS, JavaScript</li>
+                <li><strong>Mobile Development:</strong> Firebase, Jetpack Compose, Kotlin</li>
+                <li><strong>Data Structure & Algorithm:</strong> C & C++</li>
+                <li><strong>Object Oriented Programming:</strong> C#</li>
+                <li><strong>Programming Logic and Design:</strong> Java & C++</li>
+                <li><strong>Computer Fundamentals and Programming 1:</strong> Python</li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
+
       <div class="info-box">
         <h2>Experience</h2>
-        <h3>Mobile Development & Design</h3>
-        <p><strong>Role:</strong> Full Stack Developer</p>
-        <p><strong>Duration:</strong> December 2024 – Present</p>
-        <ul>
-          <li>Updating the Application</li>
-        </ul>
-        <br />
-        <h3>PC Gato</h3>
-        <p><strong>Role:</strong> Full Stack Developer</p>
-        <p><strong>Duration:</strong> Sept 2024 – December 2024</p>
-        <ul>
-          <li>Added features after the presentation</li>
-          <li>Collaborated with other groups for insights and improvement</li>
-        </ul>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="circle"></div>
+            <div class="content">
+              <h3>Mobile Development & Design</h3>
+              <p><strong>Role:</strong> Full Stack Developer</p>
+              <p><strong>Duration:</strong> December 2024 – Present</p>
+              <ul>
+                <li>Updating the Application</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="circle"></div>
+            <div class="content">
+              <h3>PC Gato</h3>
+              <p><strong>Role:</strong> Full Stack Developer</p>
+              <p><strong>Duration:</strong> Sept 2024 – December 2024</p>
+              <ul>
+                <li>Added features after the presentation</li>
+                <li>Collaborated with other groups for insights and improvement</li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -133,10 +141,20 @@
       <hr class="section-divider" />
       <div class="project-grid">
         <div class="project-item">
+          <h3>PC.Buy</h3>
+          <p><strong>Role:</strong> Full Stack Developer</p>
+          <p><strong>Duration:</strong> Mar 2025 – Present</p>
+          <p><strong>Resources:</strong> JavaScript, CSS, EJS, MongoDB</p>
+          <p>
+            <strong>Desc:</strong> Final Project for Web Design & Development
+          </p>
+          <p><strong>Proj Desc:</strong> Computer Parts & Accessories E-Commerce Project</p>
+        </div>
+        <div class="project-item">
           <h3>BookStore App</h3>
           <p><strong>Role:</strong> Full Stack Developer</p>
           <p><strong>Duration:</strong> Dec 2024 – Present</p>
-          <p><strong>Language:</strong> Jetpack Compose, Firebase, Kotlin</p>
+          <p><strong>Resources:</strong> Jetpack Compose, Firebase, Kotlin</p>
           <p>
             <strong>Desc:</strong> Solo Final Project for Mobile Development
           </p>
@@ -146,7 +164,7 @@
           <h3>Prison Management System</h3>
           <p><strong>Role:</strong> Back-End Developer</p>
           <p><strong>Duration:</strong> Dec 2024 – Apr 2025</p>
-          <p><strong>Language:</strong> C++ & Microsoft SQL</p>
+          <p><strong>Resources:</strong> C++ & Microsoft SQL</p>
           <p>
             <strong>Desc:</strong> Group Final Project for Data Structure &
             Algorithm
@@ -160,7 +178,7 @@
           <h3>PC Gato</h3>
           <p><strong>Role:</strong> Full Stack Developer</p>
           <p><strong>Duration:</strong> Sept 2024 – Nov 2024</p>
-          <p><strong>Language:</strong> C# & Microsoft SQL</p>
+          <p><strong>Resources:</strong> C# & Microsoft SQL</p>
           <p>
             <strong>Desc:</strong> Solo Final Project for Object Oriented
             Programming
@@ -171,7 +189,7 @@
           <h3>Car Rental</h3>
           <p><strong>Role:</strong> Full Stack Developer</p>
           <p><strong>Duration:</strong> Sept 2024 – Sept 2024</p>
-          <p><strong>Language:</strong> C# & Microsoft SQL</p>
+          <p><strong>Resources:</strong> C# & Microsoft SQL</p>
           <p>
             <strong>Desc:</strong> Solo Final Project trial for Object Oriented
             Programming
@@ -182,7 +200,7 @@
           <h3>Craving Pinoy</h3>
           <p><strong>Role:</strong> Front-End Developer</p>
           <p><strong>Duration:</strong> April 2024 – June 2024</p>
-          <p><strong>Language:</strong> Java</p>
+          <p><strong>Resources:</strong> Java</p>
           <p>
             <strong>Desc:</strong> Group Final Project for Programming Logic and
             Design
@@ -193,7 +211,7 @@
           <h3>Power ACK</h3>
           <p><strong>Role:</strong> Back-End Developer</p>
           <p><strong>Duration:</strong> Dec 2023 – Apr 2024</p>
-          <p><strong>Language:</strong> Java</p>
+          <p><strong>Resources:</strong> Java</p>
           <p>
             <strong>Desc:</strong> Solo Final Project for Programming Logic and
             Design
