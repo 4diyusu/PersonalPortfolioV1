@@ -1,88 +1,89 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // --- Contact Form --- //
+  /* ================================
+     CONTACT FORM (FormSubmit)
+  ================================ */
   const form = document.querySelector("form");
   if (form) {
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-      alert("Thank you for reaching out, Kevin will get back to you soon!");
-      form.reset();
+    form.addEventListener("submit", () => {
+      alert("Thank you for reaching out! Kevin will get back to you soon.");
     });
   }
 
-  // --- Scroll Highlight --- //
+  /* ================================
+     NAVIGATION: Scroll Highlight
+  ================================ */
   const navItems = document.querySelectorAll("nav ul li a");
   window.addEventListener("scroll", () => {
     const fromTop = window.scrollY + 110;
 
     navItems.forEach((link) => {
       const section = document.querySelector(link.hash);
-      if (
-        section.offsetTop <= fromTop &&
-        section.offsetTop + section.offsetHeight > fromTop
-      ) {
-        link.classList.add("active");
-      } else {
-        link.classList.remove("active");
+      if (section) {
+        if (
+          section.offsetTop <= fromTop &&
+          section.offsetTop + section.offsetHeight > fromTop
+        ) {
+          link.classList.add("active");
+        } else {
+          link.classList.remove("active");
+        }
       }
     });
   });
 
-  // --- Hamburger Menu --- //
+  /* ================================
+     NAVIGATION: Hamburger Menu (Mobile)
+  ================================ */
   const hamburger = document.getElementById("hamburger");
   const navMenu = document.getElementById("nav-links");
 
   if (hamburger && navMenu) {
-    // Toggle on click
     hamburger.addEventListener("click", () => {
       navMenu.classList.toggle("show");
     });
 
-    // Auto-hide after selecting a link (mobile UX)
-    const navLinks = navMenu.querySelectorAll("a");
-    navLinks.forEach((link) => {
-      link.addEventListener("click", () => {
-        navMenu.classList.remove("show");
-      });
+    navMenu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => navMenu.classList.remove("show"));
     });
   }
-});
 
+  /* ================================
+     NICKNAME TYPING EFFECT
+  ================================ */
+  const nicknames = ["Kevs", "Kebs", "Enerio"];
+  const typed = document.getElementById("typed-nickname");
 
-// --- Nickname Typing Effect --- //
-const nicknames = ["Kevs", "Kebs", "Enerio"];
-const typed = document.getElementById("typed-nickname");
+  if (typed) {
+    let i = 0;
+    let j = 0;
+    let isDeleting = false;
 
-let i = 0; 
-let j = 0; 
-let current = "";
-let isDeleting = false;
+    function typeEffect() {
+      const current = nicknames[i];
 
-function typeEffect() {
-  current = nicknames[i];
+      if (!isDeleting) {
+        typed.textContent = current.substring(0, j + 1);
+        j++;
 
-  if (!isDeleting) {
-    // typing forward
-    typed.textContent = current.substring(0, j + 1);
-    j++;
+        if (j === current.length) {
+          isDeleting = true;
+          setTimeout(typeEffect, 1500); 
+          return;
+        }
+      } else {
+        typed.textContent = current.substring(0, j - 1);
+        j--;
 
-    if (j === current.length) {
-      isDeleting = true;
-      setTimeout(typeEffect, 1500); 
-      return;
+        if (j === 0) {
+          isDeleting = false;
+          i = (i + 1) % nicknames.length;
+        }
+      }
+
+      const speed = isDeleting ? 80 : 120;
+      setTimeout(typeEffect, speed);
     }
-  } else {
-    // deleting backward
-    typed.textContent = current.substring(0, j - 1);
-    j--;
 
-    if (j === 0) {
-      isDeleting = false;
-      i = (i + 1) % nicknames.length; 
-    }
+    typeEffect();
   }
-
-  const speed = isDeleting ? 80 : 120; 
-  setTimeout(typeEffect, speed);
-}
-
-typeEffect();
+});
