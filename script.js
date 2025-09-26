@@ -87,3 +87,19 @@ document.addEventListener("DOMContentLoaded", () => {
     typeEffect();
   }
 });
+
+
+  /* ================================
+     HIDE EXTRA PROJECTS
+  ================================ */
+document.addEventListener("DOMContentLoaded", () => {
+    const showMoreBtn = document.getElementById("show-more");
+    const hiddenProjects = document.querySelectorAll(".project-item.hidden");
+
+    showMoreBtn.addEventListener("click", () => {
+      hiddenProjects.forEach(project => {
+        project.classList.remove("hidden");
+      });
+      showMoreBtn.style.display = "none"; 
+    });
+  });
